@@ -1,5 +1,6 @@
 import React from "react"
 import { Global, css } from "@emotion/core"
+import { Route, Switch, Link } from "react-router-dom"
 
 function App() {
     return (
@@ -14,6 +15,10 @@ function App() {
                         padding: 0;
                     }
 
+                    * + * {
+                        margin-top: 0.8rem;
+                    }
+
                     html {
                         font-size: 62.5%;
                     }
@@ -26,6 +31,13 @@ function App() {
                         justify-content: center;
                         align-items: center;
                         min-height: 100vh;
+                        text-align: center;
+                    }
+
+                    nav {
+                        display: flex;
+                        flex-direction: column;
+                        text-align: left;
                     }
 
                     h1 {
@@ -35,6 +47,18 @@ function App() {
             />
 
             <h1>React App w/ TypeScript & Emotion</h1>
+            <nav>
+                <Link to="/">Home</Link>
+                <Link to="/somewhere">Somewhere Else</Link>
+            </nav>
+            <Switch>
+                <Route exact path="/">
+                    <h2>Home</h2>
+                </Route>
+                <Route path="*">
+                    <h2>Page Not Found</h2>
+                </Route>
+            </Switch>
         </>
     )
 }
