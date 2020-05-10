@@ -21,12 +21,30 @@
         "ecmaVersion": 2018,
         "sourceType": "module"
     },
-    "plugins": ["react", "@typescript-eslint"],
+    "plugins": ["react", "@typescript-eslint", "import"],
     "rules": {
         "indent": ["error", 4],
         "linebreak-style": ["error", "unix"],
         "quotes": ["error", "double"],
-        "semi": ["error", "never"]
+        "semi": ["error", "never"],
+        "import/order": [
+            "error",
+            {
+                "groups": [
+                    "builtin",
+                    "internal",
+                    "external",
+                    "index",
+                    "sibling",
+                    "parent"
+                ],
+                "newlines-between": "always",
+                "alphabetize": {
+                    "order": "desc" /* sort in ascending order. Options: ['ignore', 'asc', 'desc'] */,
+                    "caseInsensitive": true /* ignore case. Options: [true, false] */
+                }
+            }
+        ]
     },
     "overrides": [
         {

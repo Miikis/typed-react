@@ -1,6 +1,6 @@
+import { Route, Switch, Link } from "react-router-dom"
 import React from "react"
 import { Global, css } from "@emotion/core"
-import { Route, Switch, Link } from "react-router-dom"
 
 function App() {
     return (
